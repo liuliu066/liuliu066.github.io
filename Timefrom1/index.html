@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>xsg</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+	<script type="text/javascript" src="../js/JSClickBubble.user.js" ></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<audio autoplay="autopaly" loop="loop">
+          <source src="music/love.mp3" type="audio/mp3" />
+      </audio>  
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">	
+				<div class="keyword">&nbsp;&nbsp;&nbsp;&nbsp;二零一八年九月二十二日，这一天是个重要的日子，那就是我们正式的在一起啦。现在想想就还是很开心、很激动 。</div><br /><br />
+				<div class="keyword">&nbsp;&nbsp;&nbsp;&nbsp;不知不觉已经一年过去了，和你经历了很多，在这一年里，我这学期星期天的时间都很少,找你的次数也屈指可数。但是每次和你在一起我都很开心，很珍惜，我发现越来越离不开你。憧憬着有你的未来是多么美好，一起旅游，一起做做饼干，一起品尝每种美食，一起装饰我们的家，一起经历未来生活中的点点滴滴。。。。。。</div><br /><br />
+				<div class="keyword">&nbsp;&nbsp;&nbsp;&nbsp;这一年，我印象最深刻的便是你陪我过生日，让我明白有小傻瓜和我一起过生日是多么令人开心、令人羡慕的事。我从来没有羡慕任何人，因为我有你，小傻瓜。</div><br /><br />
+				<div class="keyword">&nbsp;&nbsp;&nbsp;&nbsp;最后，我要对你这个笨蛋说：小傻瓜,生日快乐&nbsp;！&nbsp;！&nbsp;！</div>
+				
+				
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						Little fool,Time we've been together for
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						&nbsp;&nbsp;&nbsp;&nbsp;Love u forever and ever.<br/>
+						<div class="signature">—liuliu&nbsp;</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<center><div >
+			 <div style=" float:left;margin-left:38%;font-size: 18px; margin-top: 20px;width: 150px;height: 30px;background: plum;line-height: 30px;color: white;border-radius: 10px;"> <a href="../html/home.html" style="text-decoration:none ;color :#FFFFEE;">Back to home</a></div>
+			<div style=" float:right;margin-right:38%;font-size: 18px; margin-top: 20px;width: 150px;height: 30px;background: plum;line-height: 30px;color: white;border-radius: 10px;"><a href="../Treelove/index.html" target="_blank" style="text-decoration:none ;color :#FFFFEE;">Next...</a></div> 
+			
+		</div></center>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2018, 8, 21);//2018年9月22
+		together.setHours(0);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
